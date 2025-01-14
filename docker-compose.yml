@@ -1,0 +1,22 @@
+name: practice
+
+services:
+  code-server:
+    image: kingmusung/hachiwotna:practice.v1
+    container_name: ide
+    env_file:
+      - .env
+    working_dir: /code
+    ports:
+      - "8443:8443"
+    volumes: 
+      - local_code:/code/local
+      - /var/run/docker.sock:/var/run/docker.sock
+    
+    
+
+
+volumes:
+      local_code:
+        external: true
+     # labels
